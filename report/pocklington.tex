@@ -1,0 +1,59 @@
+\section{Pocklington primality test}
+Pocklington testen er en forbedret version af Lucas testen, som ikke kræver at man kender alle primtalsfaktoriseringerne.
+
+Hvis man kender en række primtalsfaktoriseringer, q af $n-1$ hvor F er faktoriseringerne mulitipliseret, $n-1=FR$ og $F>R$, kan man bruge Pocklington testen
+til at finde ud af om n er et primtal.
+
+Hvis $a^{n-1}=1(mod n)$ og $gcd(a^{(n-1)/q}-1=1$ for hver q, så er n et primtal.
+
+\subsection{Eksempel}
+Vi har $n=71$ og de kendte faktorer af 70 er \{10\}.
+
+Vi udvælger tilfældigt $a=48$.
+
+$48^{70/10}-1=587068342271$
+
+$gcd(587068342271,71)=71$
+
+Efter som resultatet er forskelligt fra 1, prøver vi et nyt tilfældigt a.
+
+$a=43$
+
+$43^{70/10}-1=271818611106$
+
+$gcd(271818611106,71)=1$
+
+Her er resultatet 1, og derfor ved vi at n er et primtal.
+
+\subsection{Implemetering}
+//TODO: Lav om til pæn kode
+def pocklington(n,factors,acc):
+	F=1
+	for f in factors:
+		F*=f
+	if F<math.sqrt(n-1):
+		print "Need more factors"
+		return
+	for i in range(acc):
+		a=random.randint(2,n-1)
+		if pow(a,n-1, n) != 1:
+			return False
+		prime=True
+		for q in factors:
+			if gcd(a**((n-1)/q)-1,n)!=1:
+				prime=False
+				break
+		if prime:
+			return True
+	return False
+
+Funktionen tager følgende input:
+\begin{itemizer}
+	\item n: Det primtal vi vil teste.
+	\item factors: Listen af kendte primtalsfaktoriseringer af n-1.
+	\item acc: Hvor mange tilfældige værdier af a, koden skal teste.
+\end{itemizer}
+
+Vi starter med at finde F. Derefter tjekker vi om $F<\sqrt{n-1}$. Hvis den er, så har vi ikke nok primtalsfaktoriseringer.
+
+Vi kører et loop igennem acc gange, hvor vi i hver af dem finder et tilfældigt a mellem 2 og n-1. Vi tjekker for alle primtalsfaktoriseringer om Pocklingtons test virker. Hvis den gør, returnere vi true.
