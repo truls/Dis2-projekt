@@ -1,0 +1,62 @@
+\subsection{Lucas test}
+\begin{theorem}
+Lad $n > 1$. $n$ er da et primtal hvis og kun hvis der for hver primfaktor $q$ af $n-1$ findes et
+heltal $1<a<n$ så
+\begin{enumerate}
+	\item $a^{n-1} \equiv 1 \pmod{n}$
+	\item $a^{\frac{(n-1)}{q}} \not \equiv 1 \pmod{n}$
+\end{enumerate}
+\begin{proof}
+	Lad os starte med at bemærke at det første krav implicerer at $a$ og $n$ er primiske.
+	Hvorfor det? Fordi vi har $a^{n-1}>n$ da $a$ enten skulle være $1$ eller $a^{n-1}$ kun
+	ville være kongruent med $a^{n-1}$ hvis $a^{n-1} < n$, eller kongruent med $0$ hvis
+	$a^{n-1} = n$. Deraf ser vi at Euklids algoritme vil give os $\gcd(a^{n-1},n)=1$.
+	Da $a$ jo deler sine primfaktorer kan $a$ og $n$ heller ikke have nogen faktorer tilfældes,
+	hvorfor de må være primiske.
+
+	Gruppen $\mmgrp{n}$ kan højst have orden $n-1$ (der er $n-1$ naturlige tal mindre end $n$).
+
+	Fra det første krav har vi at $n-1$ må være et multiplum af ordenen af $a$.
+	Hvis ordenen af $a$ er mindre end $n-1$ og vi betegner ordenen af $a$ ved $m$ så
+	må der være et $r$ så $mr=n-1$. Hvis vi lader $q_0$ være en af primfaktorene i $r$, og
+	$s = \frac{r}{q_0}$ så er $msq_0=n-1$ og $a^{ms} \equiv 1 \pmod{n}$, så den anden betingelse
+	ville altså ikke være opfyldt hvis ordenen af $a$ var mindre end $n-1$. Deraf kan
+	vi altså slutte at ordenen af $a$ må være $n-1$, og derfor også ordenen af
+	$\mmgrp{n}$, hvormed $n$ må være et primtal.
+
+	Omvendt hvis $n$ er et primtal så findes der et element der er generator for
+	$\mmgrp{n}$, som da må have elementorden $n-1$.
+\end{proof}
+\end{theorem}
+
+Hvis $n$ er sammensat så kalder vi et $a$ hvor det første punkt ikke gælder for et Fermat
+vidne for at $n$ er sammensat, og et $a$ hvor det første punkt gælder for en Fermat løgner.
+
+Hvis $n$ er sammensat kan vi ikke med sikkerhed vise det uden at prøve alle $n-1$ muligheder
+igennem. Men hvis den første betingelse ikke er opfyldt så ved vi fra Fermats lille sætning
+at $n$ må være sammensat. Heldigvis er sandsynligheden for at få et $a$ der er et Fermat vidne
+over 50\%.
+
+Vi kan komme ud for at der ikke er nogen Fermat vidner for et givent $n$ selvom det
+er et sammensat tal -- i det tilfælde er $n$ et Carmichael tal. Heldigvis er Carmichael tal
+sjældne, der er f.eks. kun 246683 Carmichael tal op til $10^{16}$. Vi ved at antallet af
+Carmichael tal under $x$ vokser langsommere and $kx$ -- mere specifikt viste Erdős en øvre grænse
+på
+$$
+C(x)<xe^{\frac{-k\log x \log\log\log x}{\log\log x}},
+$$
+for en eller anden (positiv) konstant $k$. Det afgørende her er at sandsynligheden for at få
+et Carmichael tal bliver negligibel i forhold til sandsynligheden for at få et sammensat tal
+når tallene bliver store nok, så vi kan nøjes med at se på sandsynligheden for at få et
+Fermat vidne for ikke-Carmichael sammensatte tal.
+
+Lad os nu antage at $n$ er et sammensat ikke-Carmichael tal, og lad $a$ være et Fermat vidne.
+Lad nu $a_1,a_2,\ldots,a_l$ være Fermat løgnere. Da er for alle $i$
+$$
+	(aa_i)^{n-1} \equiv a^{n-1}a_i^{n-1}\equiv a^{n-1} \not \equiv 1,
+$$
+så alle $aa_i$ for $i=1,2,\ldots,l$ er Fermat vidner.
+\subsection{Pocklingtons test}
+\begin{theorem}[Pockingtons sætning]
+Lad $n-1=q^kR$ hvor $q$ er et primtal som ikke deler $R$. Hvis der er et heltal 
+\end{theorem}

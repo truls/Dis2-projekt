@@ -5,9 +5,40 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{listings}
+\usepackage{amsfonts}
+\usepackage{amsthm,thmtools}
 
 \parindent 1pt
 \parskip 5pt
+
+\PrerenderUnicode{æ}
+\PrerenderUnicode{ø}
+\PrerenderUnicode{å}
+
+\newcommand{\Uline}[1]{\underline{\underline{#1}}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\complexes}{\mathbb{C}}
+\newcommand{\polys}{\mathfrak{P}}
+\newcommand{\imp}{\Rightarrow}
+\newcommand{\bimp}{\Leftrightarrow}
+\newcommand{\andL}{\wedge}
+\newcommand{\orL}{\vee}
+\newcommand{\logfrac}[2]{\frac{#1'(#2)}{#1(#2)}}
+\newcommand{\logfracz}[1]{\logfrac{#1}{z}}
+\newcommand{\logffracz}{\logfracz{f}}
+\newcommand{\loghfracz}{\logfracz{h}}
+\newcommand{\itau}{2\pi i}
+\newcommand{\invitau}{\frac{1}{2\pi i}}
+\newcommand{\pg}[1]{\left(#1\right)}
+\newcommand{\ip}[1]{\left<#1\right>}
+\newcommand{\onehalf}{\frac{1}{2}}
+
+\newcommand{\abs}[1]{\left|#1\right|}
+
+\newcommand{\mmgrp}[1]{(\ints/#1\ints)^*}
 
 \newtheorem{theorem}{Sætning}
 
@@ -37,6 +68,7 @@ Vi har implementeret flere forskellige primtalstests i Python
 \input{pocklington}
 \input{lucas-lehmer}
 \input{combined}
+\input{proofs}
 \end{document}
 
 
