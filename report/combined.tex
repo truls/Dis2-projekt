@@ -1,0 +1,28 @@
+\section{Kombinerede tests}
+Den kombineret sætning bruger de andre sætninger, til at lave en
+metode som kun skal bruge faktoriseringer $n-1$ og $n+1$, som ganget
+sammen giver kubikroden af n. Dette forbedrer redu
+
+Vi har et primtal $n$, og nogle primtalsfaktoriseringer af $n-1$ og $n+1$
+som ganget samm=en giver $F_1$ og $F_2$.
+
+Et krav er at $n-1=F_1R_1$, $n+1=F_2R_2$, $gcd(F_1,R_1)=1$ og $gcd(F_2,R_2)=1$
+
+Hvis Pocklington gælder for $n-1$ og $F_1$ og //todo: snak om U-funktionen
+så ved vi at følgende gælder:
+
+Hvis $n<\max(F_1^2F_2/2,F_1F_2^2/2)$ så er n et primtal.
+
+
+\subsection{Implemetering}
+\lstinputlisting{../combined.py}
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% End:

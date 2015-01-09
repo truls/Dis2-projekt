@@ -6,7 +6,12 @@
 \usepackage{amssymb}
 \usepackage{listings}
 
+\parindent 1pt
+\parskip 5pt
+
 \newtheorem{theorem}{Sætning}
+
+\lstset{language=Python}
 
 \title{DiS2 projekt 2015\\Primtalstest, moduloregning i store beregninger}
 \author{Jonas Aaslet, Kasper Brandt og Truls Asheim}
@@ -20,10 +25,18 @@
 
 \section{Introduktion}
 
+Denne opgave gennemgår flere forskellige metoder til bestemmelse af
+store primtal med den egenskab at enten $n-1$ eller $n+1$ er trivielt
+faktoriserbare. Denne egenskab kan vi udnytte til at lave en række
+tests som beviser hvorvidt et tal er et primtal. 
+
+Vi har implementeret flere forskellige primtalstests i Python 
+
+
 \input{lucas}
-
 \input{pocklington}
-
+\input{lucas-lehmer}
+\input{combined}
 \end{document}
 
 

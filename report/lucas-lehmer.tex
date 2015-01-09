@@ -1,0 +1,49 @@
+
+\section{Lucas-Lehmer test}
+
+
+
+
+Lucas-Lehmer testen kan kan bestemme om et primtal $n$, for hvilket det
+gælder at $n + 1$ kan faktoriseres trivielt, rent faktisk er et
+primtal. 
+
+
+Vi starter med at definere funktionerne $U$ og $V$ som er rekursivt
+defineret som 
+
+\begin{align*}
+U(0) = 0,\;U(1) = 1
+\end{align*}
+
+
+\begin{theorem}
+
+\begin{equation}
+U(n+1) = 0 (\mod n)
+\end{equation}
+og
+\begin{equation}
+U((n+1)/r) \neq 0 (\mod n)
+\end{equation}
+
+\end{theorem}
+
+Et sertilfælde af denne sætning er Lucas-Lehmer testen. Denne
+fremkommer når man definerer $S(k) = V(2^{k+1}/2^{2^k}$ og kan bruges
+til at teste Mersenne tals primalitet.
+
+\begin{theorem}{Lucas-Lehmer Test}
+Mersenne-tallet $M(n) = 2^n -1$ er et primtal hvis og kun hvis $S(n -
+2) = 0 (mod M)$ hvor $S(k)$ er følgen $S(0) = 4$ og $S(k + 1) = S(k)^2
+- 2$.
+\end{theorem}
+
+\paragraph{Eksempel}
+
+b
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+'%%% End:

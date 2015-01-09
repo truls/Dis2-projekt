@@ -7,13 +7,13 @@ def lucas(factors,acc):
     n+=1
     print n
     for i in range(acc):
-        a=random.randint(2,n-1)
+        a = random.randint(2,n-1)
         if a**(n-1) % n != 1:
             return False
-        prime=True
+        prime = True
         for q in factors:
             if a**((n-1)/q) % n == 1:
-                prime=False
+                prime = False
                 break
         if prime:
             print a

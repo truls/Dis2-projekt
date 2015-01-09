@@ -1,3 +1,4 @@
+
 \section{Lucas primtals test}
 Lucas primtalstesten tilhører gruppen af $n-1$ primtaltests ud fra
 tallet $n-1$ kan bestemme om $n$ er primtal.
@@ -17,11 +18,25 @@ er $n$ et primtal.
 
 \end{theorem}
 
+Sætningens første betingelse stammer fra fermats lille sætning og
+giver et definitivt svar på om $n$ er et sammensat tal, men
+sandsynliggør blot at $n$ er et primtal.
+
 Metodens resultat er afhængig af valget af $a$. Hvis 
 
 For at sætningen kan bruges i en praktisk primtalstest kræves det at
 alle vi kender alle primtalsfaktorer for $n - 1$. Da det er
 tidsskrevende at finde alle faktorer for et stort tal er vi i praksis
 interesseret i metoder som kan bevise om et tal er et primtal ved kun
-at kende enkelte af dets primtalsfaktorer. En bedre 
-o
+at kende enkelte af dets primtalsfaktorer. En 
+
+\subsection{Implementering}
+
+\lstinputlisting{../lucas.py}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% ispell-local-dictionary: "danish"
+%%% End:
