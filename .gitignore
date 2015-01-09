@@ -3,4 +3,4 @@
 *.aux
 *.log
 *.swp
-
+*.synctex.gz

@@ -2,14 +2,14 @@
 
 \usepackage[utf8x]{inputenc}
 \usepackage[danish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{listings}
 
 \newtheorem{theorem}{Sætning}
 
 \title{DiS2 projekt 2015\\Primtalstest, moduloregning i store beregninger}
 \author{Jonas Aaslet, Kasper Brandt og Truls Asheim}
-
-\newcommand{\mod}{\text{mod}}
 
 \begin{document}
 
@@ -18,33 +18,11 @@
 \end{titlepage}
 
 
-
 \section{Introduktion}
-Primtalsbeviser [
 
-\section{Lucas primtals test}
-Lucas primtalstesten tilhører gruppen af $n-1$ primtaltests ud fra
-tallet $n-1$ kan bestemme om $n$ er primtal.
+\input{lucas}
 
-\begin{theorem}[Lucas primtalstest]
-  Lad $n > 0$ og $q$ være alle primtalsfaktorer af $n - 1$. Hvis der
-  findes et heltal $1 < a < n$ så
-
-\begin{equation}
-a^{n-1}\equiv 1 \quad (\text{mod}\,n)
-\end{equation}
-og
-\begin{equation}
-a^{(n-1)/q} \nequiv 1\quad (\text{mod}\,n)
-\end{equation}
-er $n$ et primtal.
-
-\end{theorem}
-
-Det er vigtig at bemærke at denne test kræver at vi kender alle
-primtalsfaktorer for $n-1$. Da 
-
-
+\input{pocklington}
 
 \end{document}
 
